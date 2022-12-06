@@ -7,18 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E75565AD28DF374900BB15B9 /* GaugePerimeterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75565AC28DF374900BB15B9 /* GaugePerimeterText.swift */; };
+		E75565AF28DF41B400BB15B9 /* GaugeCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75565AE28DF41B400BB15B9 /* GaugeCircle.swift */; };
+		E75565B128DF43C800BB15B9 /* SpeedGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75565B028DF43C800BB15B9 /* SpeedGauge.swift */; };
+		E75565B328DF4BAD00BB15B9 /* RpmGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75565B228DF4BAD00BB15B9 /* RpmGauge.swift */; };
+		E7A69C1C28DBC09A002A6CAF /* Gauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A69C1B28DBC09A002A6CAF /* Gauge.swift */; };
+		E7A69C1E28DD0474002A6CAF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A69C1D28DD0474002A6CAF /* Extensions.swift */; };
 		E7DA91B028D75B0B0050598F /* Iron_MiniApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DA91AF28D75B0B0050598F /* Iron_MiniApp.swift */; };
 		E7DA91B228D75B0B0050598F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DA91B128D75B0B0050598F /* ContentView.swift */; };
 		E7DA91B428D75B0D0050598F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7DA91B328D75B0D0050598F /* Assets.xcassets */; };
 		E7DA91B728D75B0D0050598F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7DA91B628D75B0D0050598F /* Preview Assets.xcassets */; };
+		E7DA91BE28D75D060050598F /* UDPListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DA91BD28D75D060050598F /* UDPListener.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E75565AC28DF374900BB15B9 /* GaugePerimeterText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugePerimeterText.swift; sourceTree = "<group>"; };
+		E75565AE28DF41B400BB15B9 /* GaugeCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeCircle.swift; sourceTree = "<group>"; };
+		E75565B028DF43C800BB15B9 /* SpeedGauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedGauge.swift; sourceTree = "<group>"; };
+		E75565B228DF4BAD00BB15B9 /* RpmGauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RpmGauge.swift; sourceTree = "<group>"; };
+		E7A69C1B28DBC09A002A6CAF /* Gauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gauge.swift; sourceTree = "<group>"; };
+		E7A69C1D28DD0474002A6CAF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E7DA91AC28D75B0B0050598F /* Iron Mini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Iron Mini.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DA91AF28D75B0B0050598F /* Iron_MiniApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iron_MiniApp.swift; sourceTree = "<group>"; };
 		E7DA91B128D75B0B0050598F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E7DA91B328D75B0D0050598F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7DA91B628D75B0D0050598F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E7DA91BD28D75D060050598F /* UDPListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPListener.swift; sourceTree = "<group>"; };
+		E7DA91BF28D7673C0050598F /* Iron-Mini-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Iron-Mini-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +47,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E75565B428DF77FC00BB15B9 /* Gauges */ = {
+			isa = PBXGroup;
+			children = (
+				E7A69C1D28DD0474002A6CAF /* Extensions.swift */,
+				E7A69C1B28DBC09A002A6CAF /* Gauge.swift */,
+				E75565AE28DF41B400BB15B9 /* GaugeCircle.swift */,
+				E75565AC28DF374900BB15B9 /* GaugePerimeterText.swift */,
+				E75565B028DF43C800BB15B9 /* SpeedGauge.swift */,
+				E75565B228DF4BAD00BB15B9 /* RpmGauge.swift */,
+			);
+			path = Gauges;
+			sourceTree = "<group>";
+		};
 		E7DA91A328D75B0B0050598F = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +79,11 @@
 		E7DA91AE28D75B0B0050598F /* Iron Mini */ = {
 			isa = PBXGroup;
 			children = (
+				E75565B428DF77FC00BB15B9 /* Gauges */,
+				E7DA91BF28D7673C0050598F /* Iron-Mini-Info.plist */,
 				E7DA91AF28D75B0B0050598F /* Iron_MiniApp.swift */,
 				E7DA91B128D75B0B0050598F /* ContentView.swift */,
+				E7DA91BD28D75D060050598F /* UDPListener.swift */,
 				E7DA91B328D75B0D0050598F /* Assets.xcassets */,
 				E7DA91B528D75B0D0050598F /* Preview Content */,
 			);
@@ -111,6 +142,8 @@
 				Base,
 			);
 			mainGroup = E7DA91A328D75B0B0050598F;
+			packageReferences = (
+			);
 			productRefGroup = E7DA91AD28D75B0B0050598F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,8 +170,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7A69C1E28DD0474002A6CAF /* Extensions.swift in Sources */,
+				E7DA91BE28D75D060050598F /* UDPListener.swift in Sources */,
+				E75565AD28DF374900BB15B9 /* GaugePerimeterText.swift in Sources */,
 				E7DA91B228D75B0B0050598F /* ContentView.swift in Sources */,
 				E7DA91B028D75B0B0050598F /* Iron_MiniApp.swift in Sources */,
+				E75565B128DF43C800BB15B9 /* SpeedGauge.swift in Sources */,
+				E75565AF28DF41B400BB15B9 /* GaugeCircle.swift in Sources */,
+				E75565B328DF4BAD00BB15B9 /* RpmGauge.swift in Sources */,
+				E7A69C1C28DBC09A002A6CAF /* Gauge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,11 +310,14 @@
 				DEVELOPMENT_TEAM = 8XWB6322TF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Iron-Mini-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -282,6 +325,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Dario-Ragusa.Iron-Mini";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -299,11 +345,14 @@
 				DEVELOPMENT_TEAM = 8XWB6322TF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Iron-Mini-Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,6 +360,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Dario-Ragusa.Iron-Mini";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
