@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E7025E92294557C800CDA55F /* Tiles.db in Resources */ = {isa = PBXBuildFile; fileRef = E7025E91294557C800CDA55F /* Tiles.db */; };
-		E7025E9429455BDF00CDA55F /* Iron-Mini-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7025E9329455BDF00CDA55F /* Iron-Mini-Info.plist */; };
 		E75565AD28DF374900BB15B9 /* GaugePerimeterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75565AC28DF374900BB15B9 /* GaugePerimeterText.swift */; };
 		E75565AF28DF41B400BB15B9 /* GaugeCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75565AE28DF41B400BB15B9 /* GaugeCircle.swift */; };
 		E75565B128DF43C800BB15B9 /* SpeedGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75565B028DF43C800BB15B9 /* SpeedGauge.swift */; };
@@ -27,7 +26,6 @@
 
 /* Begin PBXFileReference section */
 		E7025E91294557C800CDA55F /* Tiles.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tiles.db; sourceTree = "<group>"; };
-		E7025E9329455BDF00CDA55F /* Iron-Mini-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Iron-Mini-Info.plist"; sourceTree = "<group>"; };
 		E75565AC28DF374900BB15B9 /* GaugePerimeterText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugePerimeterText.swift; sourceTree = "<group>"; };
 		E75565AE28DF41B400BB15B9 /* GaugeCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeCircle.swift; sourceTree = "<group>"; };
 		E75565B028DF43C800BB15B9 /* SpeedGauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedGauge.swift; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 				E7E40F1F2944F24800D1BDC7 /* MapView.swift */,
 				E7DA91B328D75B0D0050598F /* Assets.xcassets */,
 				E7DA91B528D75B0D0050598F /* Preview Content */,
-				E7025E9329455BDF00CDA55F /* Iron-Mini-Info.plist */,
 			);
 			path = "Iron Mini";
 			sourceTree = "<group>";
@@ -182,7 +179,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7DA91B728D75B0D0050598F /* Preview Assets.xcassets in Resources */,
-				E7025E9429455BDF00CDA55F /* Iron-Mini-Info.plist in Resources */,
 				E7025E92294557C800CDA55F /* Tiles.db in Resources */,
 				E7E40F222944F25500D1BDC7 /* download.sh in Resources */,
 				E7D6A0822946784A0099401C /* .gitignore in Resources */,
@@ -338,7 +334,7 @@
 				DEVELOPMENT_TEAM = 8XWB6322TF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Iron-Mini-Info.plist";
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Application would like to use your location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Application would like to use your location";
@@ -375,7 +371,7 @@
 				DEVELOPMENT_TEAM = 8XWB6322TF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Iron-Mini-Info.plist";
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Application would like to use your location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Application would like to use your location";
