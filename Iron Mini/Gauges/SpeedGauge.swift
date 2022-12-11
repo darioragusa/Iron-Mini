@@ -21,8 +21,6 @@ struct SpeedGauge: View {
     private let fuelProgressBackgroundColor: Color = Color(red: 95/255, green: 115/255, blue: 130/255)
     private let backgroundColor: Color = Color(red: 35/255, green: 50/255, blue: 60/255)
     
-    
-    
     var body: some View {
         GeometryReader { geometryReader in
             ZStack {

@@ -28,8 +28,13 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             Color.black
+            MapView()
+                .mask(LinearGradient(gradient: Gradient(colors: [.clear, .black, .black]), startPoint: .bottomLeading, endPoint: .topTrailing))
+                .mask(LinearGradient(gradient: Gradient(colors: [.clear, .black, .black]), startPoint: .bottomTrailing, endPoint: .topLeading))
+                .mask(LinearGradient(gradient: Gradient(colors: [.clear, .black, .black]), startPoint: .bottom, endPoint: .top))
             GeometryReader { geometryReader in
                 VStack {
+                    Spacer()
                     HStack {
                         SpeedGauge(speed: $kmh, fuel: $fuel, gaugeSpeed: $gaugeSpeed, gaugeFuel: $gaugeFuel)
                             .frame(width: geometryReader.size.width * 0.45, height: geometryReader.size.width * 0.45)
@@ -37,7 +42,6 @@ struct ContentView: View {
                         RpmGauge(rpm: $rpm, coolant: $coolant, gaugeRpm: $gaugeRpm, gaugeCoolant: $gaugeCoolant)
                             .frame(width: geometryReader.size.width * 0.45, height: geometryReader.size.width * 0.45)
                     }
-                    Spacer()
                 }
             }
         }

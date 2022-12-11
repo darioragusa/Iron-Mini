@@ -1,0 +1,7 @@
+## User settings
+xcuserdata/
+
+## The tiles db
+*.db
+
+**/.DS_Store
