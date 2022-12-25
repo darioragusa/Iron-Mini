@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SpeedGauge: View {
-    @Binding var speed: CGFloat
-    @Binding var fuel: CGFloat
+    @Binding var speed: UInt8
+    @Binding var fuel: UInt8
     @Binding var gaugeSpeed: CGFloat
     @Binding var gaugeFuel: CGFloat
     @State var fuelText = "0 L"

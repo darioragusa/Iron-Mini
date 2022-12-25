@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct RpmGauge: View {
-    @Binding var rpm: CGFloat
-    @Binding var coolant: CGFloat
+    @Binding var rpm: UInt16
+    @Binding var coolant: UInt8
     @Binding var gaugeRpm: CGFloat
     @Binding var gaugeCoolant: CGFloat
     @State var coolantText: String = "0 C °"

@@ -8,7 +8,6 @@
 #define DEBUG_SKIP false
 #define SEND_INTERVAL 20
 
-
 const int SPI_CS_PIN = 53;
 const int CAN_INT_PIN = 2;
 mcp2515_can CAN(SPI_CS_PIN); // Set CS pin
@@ -50,17 +49,13 @@ uint8_t  len;
 byte cdata[MAX_DATA_SIZE] = {0};
 unsigned long time_now = 0;
 
-int kmh = 0;
-int rpm = 0;
-int fuel = 0;
-int coolant = 0;
+uint8_t kmh = 0;
+uint8_t fuel = 0;
+uint8_t coolant = 0;
+uint16_t rpm = 0;
 
 void loop() {
-  
-  char prbuf[32];
-
-  if (DEBUG_SKIP) goto sendpacket;
-
+#if !DEBUG_SKIP
   // check if data coming
   // if(!digitalRead(2)) { // If pin 2 is low, read receive buffer
   if (CAN_MSGAVAIL != CAN.checkReceive()) {
@@ -84,35 +79,40 @@ void loop() {
 
   switch (id) {
     case 339: // 00000153
-      kmh = (int)(((cdata[2] * 256) + (cdata[1] * 8)) * 0.625);
+      kmh = (uint8_t)(((cdata[2] * 256) + cdata[1]) / 128);
       break;
     case 790: // 00000316
-      rpm = (int)((cdata[2] + (cdata[3] * 256)) / 6.42);
+      rpm = (uint16_t)((cdata[2] + (cdata[3] * 256)) / 6.4);
       break;
     case 809: // 00000329
-      coolant = (int)((cdata[1] * 0.75) - 48.373);
+      coolant = (uint8_t)((cdata[1] * 0.75) - 48.373);
       break;
     case 1555: // 00000613
-      fuel = (int)((cdata[2] > 128) ? cdata[2] - 128 : cdata[2]);
+      fuel = (uint8_t)((cdata[2] > 128) ? cdata[2] - 128 : cdata[2]);
       break;
     default:
       return;
       break;
   }
+#endif
 
-sendpacket:
-
-  if (DEBUG) {
-    sprintf(prbuf, "%08lX %02X %02X %02X %02X %02X %02X %02X %02X", (unsigned long)id, cdata[0], cdata[1], cdata[2], cdata[3], cdata[4], cdata[5], cdata[6], cdata[7]);
-  } else {
-    sprintf(prbuf, "153=%d;316=%d;329=%d;613=%d", kmh, rpm, coolant, fuel); // should be ~30
-  }
+#if DEBUG
+  char prbuf[32];
+  sprintf(prbuf, "%08lX %02X %02X %02X %02X %02X %02X %02X %02X", (unsigned long)id, cdata[0], cdata[1], cdata[2], cdata[3], cdata[4], cdata[5], cdata[6], cdata[7]);
+  SERIAL_PORT_MONITOR.println(prbuf);
+#else
+  unsigned char prbuf[5];
+  prbuf[0] = kmh;
+  prbuf[1] = rpm & 0x00FF;
+  prbuf[2] = (rpm & 0xFF00) >> 8;
+  prbuf[3] = coolant;
+  prbuf[4] = fuel;
+#endif
 
   if ((unsigned long)(millis() - time_now) > SEND_INTERVAL) {
     time_now = millis();
-    SERIAL_PORT_MONITOR.println(prbuf);
     UDP.beginPacket(dest, remPort);
-    UDP.write(prbuf);
+    UDP.write(prbuf, sizeof(prbuf));
     UDP.endPacket();
   }
 }

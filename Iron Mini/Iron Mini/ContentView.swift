@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var kmh: CGFloat = 0
-    @State var rpm: CGFloat = 0
-    @State var coolant: CGFloat = 0
-    @State var fuel: CGFloat = 0
+    @State var kmh: UInt8 = 0
+    @State var rpm: UInt16 = 0
+    @State var coolant: UInt8 = 0
+    @State var fuel: UInt8 = 0
     
     @State var gaugeSpeed: CGFloat = 0
     @State var gaugeFuel: CGFloat = 0
@@ -46,52 +46,42 @@ struct ContentView: View {
             }
         }
         .onReceive(udpListener.$messageReceived, perform: { messageReceived in
-            guard let message = messageReceived else { return }
-            let receivedMessage = String(bytes: message, encoding: .utf8)?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-            if receivedMessage.isEmpty { return }
-            print(receivedMessage)
-            parseMessage(message: receivedMessage)
+            if let message = messageReceived {
+                print(message)
+                parseMessage(message: message)
+            }
         })
         .onAppear(perform: {
             UIApplication.shared.isIdleTimerDisabled = true
         })
     }
     
-    func parseMessage(message: String) {
-        // 153=%d;316=%d;329=%d;613=%d
-        for canData in message.split(separator: ";") {
-            let canId = String(canData.split(separator: "=").first ?? "")
-            let canValue = String(canData.split(separator: "=").last ?? "")
-            let parsedCanVal = CGFloat(Int(canValue) ?? 0)
-            switch (canId) {
-            case "153":
-                self.kmh = parsedCanVal
-                self.gaugeSpeed = (self.kmh / self.maxSpeed * 0.75)
-                break;
-            case "316":
-                self.rpm = parsedCanVal
-                self.gaugeRpm = (self.rpm / self.maxRpm * 0.75)
-                break;
-            case "329":
-                self.coolant = parsedCanVal
-                self.gaugeCoolant = (self.coolant / self.maxCoolant * 0.125)
-                break;
-            case "613":
-                self.fuel = parsedCanVal
-                self.gaugeFuel = (self.fuel / self.fuelSize * 0.125)
-                break;
-            default:
-                break;
-            }
+    func parseMessage(message: Data) {
+        guard message.count == 5 else {
+            return
         }
+        
+        let values = [UInt8](message)
+        
+        self.kmh = values[0];
+        self.gaugeSpeed = CGFloat(self.kmh) / self.maxSpeed * 0.75
+        
+        self.rpm = UInt16(values[1]) + (UInt16(values[2]) << 8)
+        self.gaugeRpm = CGFloat(self.rpm) / self.maxRpm * 0.75
+        
+        self.coolant = values[3]
+        self.gaugeCoolant = CGFloat(self.coolant) / self.maxCoolant * 0.125
+        
+        self.fuel = values[4]
+        self.gaugeFuel = CGFloat(self.fuel) / self.fuelSize * 0.125
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .previewLayout(.fixed(width: 812, height: 375)) // 1
-            .environment(\.horizontalSizeClass, .compact) // 2
-            .environment(\.verticalSizeClass, .compact) // 3
+            .previewLayout(.fixed(width: 812, height: 375))
+            .environment(\.horizontalSizeClass, .compact)
+            .environment(\.verticalSizeClass, .compact)
     }
 }
