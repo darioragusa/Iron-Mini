@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		E7025E92294557C800CDA55F /* Tiles.db in Resources */ = {isa = PBXBuildFile; fileRef = E7025E91294557C800CDA55F /* Tiles.db */; };
+		E743B1E62953029C00292291 /* MapViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E743B1E52953029C00292291 /* MapViewCoordinator.swift */; };
+		E743B1E8295302E100292291 /* TileOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E743B1E7295302E100292291 /* TileOverlay.swift */; };
 		E75565AD28DF374900BB15B9 /* GaugePerimeterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75565AC28DF374900BB15B9 /* GaugePerimeterText.swift */; };
 		E75565AF28DF41B400BB15B9 /* GaugeCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75565AE28DF41B400BB15B9 /* GaugeCircle.swift */; };
 		E75565B128DF43C800BB15B9 /* SpeedGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75565B028DF43C800BB15B9 /* SpeedGauge.swift */; };
 		E75565B328DF4BAD00BB15B9 /* RpmGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75565B228DF4BAD00BB15B9 /* RpmGauge.swift */; };
 		E7A69C1C28DBC09A002A6CAF /* Gauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A69C1B28DBC09A002A6CAF /* Gauge.swift */; };
 		E7A69C1E28DD0474002A6CAF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A69C1D28DD0474002A6CAF /* Extensions.swift */; };
-		E7D6A0822946784A0099401C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E7D6A0812946784A0099401C /* .gitignore */; };
 		E7DA91B028D75B0B0050598F /* Iron_MiniApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DA91AF28D75B0B0050598F /* Iron_MiniApp.swift */; };
 		E7DA91B228D75B0B0050598F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DA91B128D75B0B0050598F /* ContentView.swift */; };
 		E7DA91B428D75B0D0050598F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7DA91B328D75B0D0050598F /* Assets.xcassets */; };
@@ -26,13 +27,14 @@
 
 /* Begin PBXFileReference section */
 		E7025E91294557C800CDA55F /* Tiles.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tiles.db; sourceTree = "<group>"; };
+		E743B1E52953029C00292291 /* MapViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewCoordinator.swift; sourceTree = "<group>"; };
+		E743B1E7295302E100292291 /* TileOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileOverlay.swift; sourceTree = "<group>"; };
 		E75565AC28DF374900BB15B9 /* GaugePerimeterText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugePerimeterText.swift; sourceTree = "<group>"; };
 		E75565AE28DF41B400BB15B9 /* GaugeCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeCircle.swift; sourceTree = "<group>"; };
 		E75565B028DF43C800BB15B9 /* SpeedGauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedGauge.swift; sourceTree = "<group>"; };
 		E75565B228DF4BAD00BB15B9 /* RpmGauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RpmGauge.swift; sourceTree = "<group>"; };
 		E7A69C1B28DBC09A002A6CAF /* Gauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gauge.swift; sourceTree = "<group>"; };
 		E7A69C1D28DD0474002A6CAF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		E7D6A0812946784A0099401C /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		E7DA91AC28D75B0B0050598F /* Iron Mini.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Iron Mini.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DA91AF28D75B0B0050598F /* Iron_MiniApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iron_MiniApp.swift; sourceTree = "<group>"; };
 		E7DA91B128D75B0B0050598F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E743B1E42953027A00292291 /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				E7E40F1F2944F24800D1BDC7 /* MapView.swift */,
+				E743B1E52953029C00292291 /* MapViewCoordinator.swift */,
+				E743B1E7295302E100292291 /* TileOverlay.swift */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
 		E75565B428DF77FC00BB15B9 /* Gauges */ = {
 			isa = PBXGroup;
 			children = (
@@ -71,7 +83,6 @@
 		E7DA91A328D75B0B0050598F = {
 			isa = PBXGroup;
 			children = (
-				E7D6A0812946784A0099401C /* .gitignore */,
 				E7DA91AE28D75B0B0050598F /* Iron Mini */,
 				E7DA91AD28D75B0B0050598F /* Products */,
 			);
@@ -88,12 +99,12 @@
 		E7DA91AE28D75B0B0050598F /* Iron Mini */ = {
 			isa = PBXGroup;
 			children = (
+				E743B1E42953027A00292291 /* MapView */,
 				E7E40F1E2944F23600D1BDC7 /* Tiles */,
 				E75565B428DF77FC00BB15B9 /* Gauges */,
 				E7DA91AF28D75B0B0050598F /* Iron_MiniApp.swift */,
 				E7DA91B128D75B0B0050598F /* ContentView.swift */,
 				E7DA91BD28D75D060050598F /* UDPListener.swift */,
-				E7E40F1F2944F24800D1BDC7 /* MapView.swift */,
 				E7DA91B328D75B0D0050598F /* Assets.xcassets */,
 				E7DA91B528D75B0D0050598F /* Preview Content */,
 			);
@@ -181,7 +192,6 @@
 				E7DA91B728D75B0D0050598F /* Preview Assets.xcassets in Resources */,
 				E7025E92294557C800CDA55F /* Tiles.db in Resources */,
 				E7E40F222944F25500D1BDC7 /* download.sh in Resources */,
-				E7D6A0822946784A0099401C /* .gitignore in Resources */,
 				E7DA91B428D75B0D0050598F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,8 +204,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7A69C1E28DD0474002A6CAF /* Extensions.swift in Sources */,
+				E743B1E8295302E100292291 /* TileOverlay.swift in Sources */,
 				E7DA91BE28D75D060050598F /* UDPListener.swift in Sources */,
 				E75565AD28DF374900BB15B9 /* GaugePerimeterText.swift in Sources */,
+				E743B1E62953029C00292291 /* MapViewCoordinator.swift in Sources */,
 				E7DA91B228D75B0B0050598F /* ContentView.swift in Sources */,
 				E7DA91B028D75B0B0050598F /* Iron_MiniApp.swift in Sources */,
 				E75565B128DF43C800BB15B9 /* SpeedGauge.swift in Sources */,
@@ -259,7 +271,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -313,7 +325,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
